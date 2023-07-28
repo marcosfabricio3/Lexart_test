@@ -2,7 +2,7 @@
 const chatInput = document.querySelector('.chat-box')
 const sendMesage = document.querySelector('#send-mesage')
 const chatV = document.querySelector('.chat-container')
-const spaceNone = /^(?=\D*$)(?=\S{0,7}$).*\S.*$/;
+const spaceNone = /\s/;
 
 var interactionCounter = 0
 var username = ''
@@ -93,7 +93,7 @@ function firstresponse() {
 function requestUsername() {
     if(interactionCounter == 1) {
         if(spaceNone.test(chatInput.value)) {
-            createMessageBot('The username provided is not valid. Please try again and make sure to provide a valid username without any spaces, with at least 1 number:')
+            createMessageBot('The username provided is not valid. Please try again and make sure to provide a valid username without any spaces:')
         }else {
             createMessageBot('Please enter your password:')
 
@@ -107,7 +107,7 @@ function requestUsername() {
 function requestPassword() {
     if(interactionCounter == 2) {
         if(spaceNone.test(chatInput.value)) {
-            createMessageBot('The password provided is not valid. Please try again and make sure to provide a valid password without any spaces, with at least 1 number:')
+            createMessageBot('The password provided is not valid. Please try again and make sure to provide a valid password without any spaces:')
         }else {
             createMessageBot('Sign up successful')
             createMessageBot(`Hello ${username}! 👋 Welcome. How can I assist you today?`)
