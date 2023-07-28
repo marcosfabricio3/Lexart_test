@@ -151,13 +151,16 @@ function postMesage(){
     } else {
         // create user message
         createUserMessage()
-        // require password
-        requestPassword()
+        if (password == '') {
+            // require password
+            requestPassword()
+        } else {
+                    answers()
+        }
         // require username
         requestUsername()
         // create first reply
         firstresponse()
-        answers()
         // clear input and show end
         descendToFinal()
     }
