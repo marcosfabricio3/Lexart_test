@@ -92,8 +92,8 @@ function firstresponse() {
 // require username
 function requestUsername() {
     if(interactionCounter == 1) {
-        if(!spaceNone.test(chatInput.value)) {
-            createMessageBot('The password provided is not valid. Please try again and make sure to provide a valid password without any spaces, with at least 1 number:')
+        if(spaceNone.test(chatInput.value)) {
+            createMessageBot('The username provided is not valid. Please try again and make sure to provide a valid username without any spaces, with at least 1 number:')
         }else {
             createMessageBot('Please enter your password:')
 
@@ -107,7 +107,7 @@ function requestUsername() {
 function requestPassword() {
     if(interactionCounter == 2) {
         if(spaceNone.test(chatInput.value)) {
-            createMessageBot('The password provided is not valid. Please try again and make sure to provide a valid password without any spaces:')
+            createMessageBot('The password provided is not valid. Please try again and make sure to provide a valid password without any spaces, with at least 1 number:')
         }else {
             createMessageBot('Sign up successful')
             createMessageBot(`Hello ${username}! 👋 Welcome. How can I assist you today?`)
@@ -147,7 +147,6 @@ function answers() {
 function postMesage(){
 
     if (chatInput.value == ''){
-        console.log('error')
     } else {
         // create user message
         createUserMessage()
@@ -155,7 +154,7 @@ function postMesage(){
             // require password
             requestPassword()
         } else {
-                    answers()
+            answers()
         }
         // require username
         requestUsername()
