@@ -149,7 +149,6 @@ function postMesage(){
     if (chatInput.value == ''){
         console.log('error')
     } else {
-        answers()
         // create user message
         createUserMessage()
         // require password
@@ -158,6 +157,7 @@ function postMesage(){
         requestUsername()
         // create first reply
         firstresponse()
+        answers()
         // clear input and show end
         descendToFinal()
     }
