@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@vercel/postgres": "^0.4.1",
+    "dotenv": "^16.3.1",
+    "pg": "^8.11.1"
+  }
+}
